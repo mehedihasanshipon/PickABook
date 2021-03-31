@@ -16,6 +16,9 @@ const Home = () => {
             <div className="container">
                 <div className="row ">
                     {
+                        books.length ===0 && <p>Loading...</p>
+                    }
+                    {
                         books.map(book => <Card book={book} />)
                     }
                 </div>

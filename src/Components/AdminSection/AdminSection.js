@@ -1,23 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import AddBooks from "../AddBooks/AddBooks";
 import ManageBooks from "../ManageBooks/ManageBooks";
 import './AdminSection.css'
 
 const AdminSection = () => {
   const [section, setSection] = useState(true);
+  let { path, url } = useRouteMatch();
   return (
     <div className="">
       <div className="row">
         <div className ="col-md-3 g-0">
             <div className="left">
-                <h2>Book Shops</h2>
-                <Link className="menu my-3" onClick={() => setSection(!section)}>Add books</Link>
-                <Link className="menu" onClick={() => setSection(!section)}>Manage books</Link>
+                <Link to={`${url}/addEvent`} className="menu my-2" >Add books</Link>
+                <Link to={`${url}/manageBooks`} className="menu">Manage books</Link>
             </div>
         </div>
         <div className="col-md-9">
-            {section ? <AddBooks /> : <ManageBooks />}
+            <Switch>
+            <Route exact path={path}>
+              <AddBooks />
+            </Route>
+              <Route exact path={`${path}/addEvent`}>
+                <AddBooks />
+              </Route>
+              <Route path={`${path}/:topicId`}>
+                <ManageBooks />
+              </Route>
+            </Switch>
         </div>
       </div>
     </div>

@@ -48,8 +48,8 @@ const AddBooks = () => {
   }
   return (
     <div>
-      <h2> Book</h2>
       <div className="input-section d-flex justify-content-center">
+      <h2>Add Book</h2>
         <div className="book-info">
           <div className="form-section p-4">
             <form onSubmit={handleSubmit(onSubmit)}>
