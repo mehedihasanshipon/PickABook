@@ -1,0 +1,9 @@
+.login{
+    width: 60%;
+    /* height: 200px; */
+    /* border: 1px solid salmon; */
+    margin: 50px auto;
+}
+.login .google-signIn{
+height: 200px !important;
+}

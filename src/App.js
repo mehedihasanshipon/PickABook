@@ -5,34 +5,43 @@ import Home from './Components/Home/Home';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import AdminSection from './Components/AdminSection/AdminSection';
 import OrderSection from './Components/OrdersSection/OrderSection';
 import CheckOut from './Components/CheckOut/CheckOut';
+import Login from './Components/Login/Login';
+import { createContext, useState } from 'react';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser,setLoggedInUser] = useState({});
   return (
-    <Router>
+    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+      <h2> {loggedInUser.email} </h2>
+      <Router>
       <Header />
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/orders">
+        <PrivateRoute path="/orders">
           <OrderSection />
-        </Route>
+        </PrivateRoute>
         <Route path="/admin">
           <AdminSection />
         </Route>
-        <Route path="/checkout/:id">
-          <CheckOut />
+        <Route path="/login">
+          <Login />
         </Route>
+        <PrivateRoute path="/checkout/:id">
+          <CheckOut />
+        </PrivateRoute>
       </Switch>
-      
-      
     </Router>
+    </UserContext.Provider>
   );
 }
 

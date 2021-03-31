@@ -4,7 +4,7 @@ import './Card.css'
 // import img from '../../books/image 19.png'
 
 const Card = (props) => {
-    console.log(props.book);
+    // console.log(props.book);
     const {name,price,author,bookImage,_id} = props.book;
     const history =  useHistory();
     const handleClick = (id)=>{
