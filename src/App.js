@@ -9,6 +9,8 @@ import {
   Link
 } from "react-router-dom";
 import AdminSection from './Components/AdminSection/AdminSection';
+import OrderSection from './Components/OrdersSection/OrderSection';
+import CheckOut from './Components/CheckOut/CheckOut';
 
 function App() {
   return (
@@ -18,8 +20,14 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route path="/orders">
+          <OrderSection />
+        </Route>
         <Route path="/admin">
           <AdminSection />
+        </Route>
+        <Route path="/checkout/:id">
+          <CheckOut />
         </Route>
       </Switch>
       

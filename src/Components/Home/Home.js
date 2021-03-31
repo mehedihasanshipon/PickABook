@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import SearchSection from '../SearchSection/SearchSection';
 
 const Home = () => {
+    const [books,setBooks] = useState([]);
+    // console.log(books);
+    useEffect(()=>{
+        fetch('http://localhost:3002/books')
+        .then(res=>res.json())
+        .then(data=>setBooks(data))
+    },[])
     return (
         <div>
             <SearchSection />
             <div className="container">
                 <div className="row ">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    {
+                        books.map(book => <Card book={book} />)
+                    }
                 </div>
             </div>
         </div>
