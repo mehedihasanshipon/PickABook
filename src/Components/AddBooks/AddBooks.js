@@ -49,23 +49,25 @@ const AddBooks = () => {
   return (
     <div>
       <div className="input-section d-flex justify-content-center">
-      <h2>Add Book</h2>
+      
         <div className="book-info">
+        
           <div className="form-section p-4">
+          <h4 className="text-center">Add Book</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="name" className="form-label">Name</label>
-              <input name="name" className="form-control" defaultValue="Enter Name" ref={register} />
+              <input name="name" className="form-control" placeholder="Enter Name" ref={register} />
 
               <label htmlFor="price" className="form-label">Add price</label>
-              <input name="price" className="form-control" defaultValue="Enter Price" ref={register} />
+              <input name="price" className="form-control" placeholder="Enter Price" ref={register} />
 
               <label htmlFor="author" className="form-label">Author Name</label>
-              <input name="author" className="form-control" defaultValue="Enter Name" ref={register} />
+              <input name="author" className="form-control" placeholder="Enter Author Name" ref={register} />
               
                 <label for="formFile" className="form-label">Add book cover photo</label>
                 <input onChange={handleImageUpload} className="form-control" type="file" id="formFile" />
               
-              <input type="submit" value="Save"  className="form-control btn btn-primary my-1" />
+              <input type="submit" value="Save"  className="form-control btn btn-primary my-2" />
 
               
             </form>

@@ -10,17 +10,17 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="white" variant="white">
             <div className="container">
-                <Link className="navbar-brand" to="/">Book-shop</Link>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Link className="navbar-brand nav-brand" to="/">Book-shop</Link>
+                <Navbar.Toggle className="nav-toggle"><img src='https://img.icons8.com/ios/30/000000/menu--v6.png' alt="" /></Navbar.Toggle>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
                     <Link to="/" className="nav-link">Home</Link>
                     <Link to="/orders" className="nav-link">Orders</Link>
                     <Link to="/admin" className="nav-link">Admin</Link>
                     <Link className="nav-link">Deals</Link>
-                    <Link className="nav-link">
+                    <Link to="/login" className="nav-link">
                         {
-                            loggedInUser.email?<img src={ loggedInUser.photo || 'logo' } alt=""/>: null 
+                            loggedInUser.email?<img src={ loggedInUser.photo || 'logo' } alt=""/>: <span className="btn nav-login">Login</span> 
                         }
                     </Link>
                     </Nav>

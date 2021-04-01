@@ -6,6 +6,7 @@ import './CheckOut.css'
 const CheckOut = () => {
   const { id } = useParams();
   const [book,setBook] = useState({});
+  const [click,setClick] = useState(true);
    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
    console.log(book);
   useEffect(()=>{
@@ -34,9 +35,9 @@ const CheckOut = () => {
   }
   return (
     <div className="container">
-      <div className="mt-5">
+      <div className="mt-5 checkout-section">
         <h2>Checkout </h2>
-        <div className="checkout-section">
+        <div className="checkout">
           <table class="table">
             <thead>
               <tr>
@@ -55,7 +56,12 @@ const CheckOut = () => {
           </table>
         </div>
         <div className="d-flex justify-content-end">
-            <button onClick={handleCheckoutClick} className="btn btn-primary">Checkout</button>
+            <button onClick={handleCheckoutClick} className="btn checkout-btn">
+              {
+                !book.orderTime ?'Checkout':'✅ Purchased'
+              }
+              
+              </button>
         </div>
       </div>
     </div>

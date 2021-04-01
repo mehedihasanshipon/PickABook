@@ -1,4 +1,6 @@
 import React from "react";
+import editIcon from '../../icons/edit 1.png';
+import deleteIcon from '../../icons/delete.png'
 
 const ManageBookList = (props) => {
     // console.log(props.book);
@@ -18,10 +20,11 @@ const ManageBookList = (props) => {
   return (
     <tbody>
       <tr>
-        <th scope="row"> {name} </th>
+        <td> {name} </td>
         <td>{author}</td>
-        <td>{price}</td>
-        <td><button className="btn btn-primary">Edit</button> <button onClick={()=>handleDeleteClick(_id)} className="btn btn-danger">Delete</button></td>
+        <td>${price}</td>
+        <td><button className="btn"><img src="https://img.icons8.com/bubbles/50/000000/edit.png" alt=""/></button> 
+        <button onClick={()=>handleDeleteClick(_id)} className="btn "><img src="https://img.icons8.com/cute-clipart/40/000000/delete-forever.png" alt=""/></button></td>
       </tr>
     </tbody>
   );

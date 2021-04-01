@@ -5,6 +5,8 @@ import "firebase/auth";
 import firebaseConfig from "../../firebase.config";
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -53,9 +55,9 @@ const Login = () => {
       <div className="d-flex justify-content-center align-items-center google-signIn">
         <button
           onClick={handleGoogleSignIn}
-          className="btn btn-outline-secondary"
-        >
-          Continue with google
+          className="btn login-btn"
+        > <div><img src="https://img.icons8.com/cute-clipart/30/000000/google-logo.png" alt=""/></div>
+          <h6>Continue with google</h6>
         </button>
       </div>
     </div>

@@ -12,6 +12,9 @@ input{
     background-color: #F1F1F1;
     border-radius: 5px;
 }
+input:focus{
+    outline: none;
+}
 
 .searchBtn{
     padding: 12px 30px;

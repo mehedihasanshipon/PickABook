@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import AddBooks from "../AddBooks/AddBooks";
 import ManageBooks from "../ManageBooks/ManageBooks";
-import './AdminSection.css'
+import './AdminSection.css';
+import plusIcon from '../../icons/plus 1.png';
+import manageIcon from '../../icons/grid 1.png'
 
 const AdminSection = () => {
   const [section, setSection] = useState(true);
@@ -10,10 +12,10 @@ const AdminSection = () => {
   return (
     <div className="">
       <div className="row">
-        <div className ="col-md-3 g-0">
-            <div className="left">
-                <Link to={`${url}/addEvent`} className="menu my-2" >Add books</Link>
-                <Link to={`${url}/manageBooks`} className="menu">Manage books</Link>
+        <div className ="col-md-2  g-0">
+            <div className="left pt-5">
+                <Link to={`${url}/addEvent`} className="menu my-2" > <img className="adminIcon" src={plusIcon} alt=""/> Add books</Link>
+                <Link to={`${url}/manageBooks`} className="menu"> <img className="adminIcon" src={manageIcon} alt=""/> Manage books</Link>
             </div>
         </div>
         <div className="col-md-9">
