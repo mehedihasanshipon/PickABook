@@ -6,7 +6,7 @@ const Home = () => {
     const [books,setBooks] = useState([]);
     // console.log(books);
     useEffect(()=>{
-        fetch('http://localhost:3002/books')
+        fetch('https://radiant-badlands-32060.herokuapp.com/books')
         .then(res=>res.json())
         .then(data=>setBooks(data))
     },[])

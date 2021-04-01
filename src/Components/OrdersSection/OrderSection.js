@@ -6,7 +6,7 @@ const OrderSection = () => {
     const[loggedInUser,setLoggedInUser] = useContext(UserContext)
     const [orders,setOrders] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:3002/mailData?email='+loggedInUser.email,{
+        fetch('https://radiant-badlands-32060.herokuapp.com/mailData?email='+loggedInUser.email,{
             method:'GET',
             headers:{
                 'Content-Type':'application/json'

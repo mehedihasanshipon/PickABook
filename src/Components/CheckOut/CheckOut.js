@@ -10,7 +10,7 @@ const CheckOut = () => {
    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
    console.log(book);
   useEffect(()=>{
-      fetch(`http://localhost:3002/checkout/${id}`)
+      fetch(`https://radiant-badlands-32060.herokuapp.com/checkout/${id}`)
       .then(res=>res.json())
       .then(data=>setBook(data))
   },[])
@@ -21,7 +21,7 @@ const CheckOut = () => {
       orderBook.email = loggedInUser.email;
     //   console.log(orderBook);
       setBook(orderBook);
-      fetch('http://localhost:3002/addOrder',{
+      fetch('https://radiant-badlands-32060.herokuapp.com/addOrder',{
         method:'POST',
         headers: {
             'Content-type': 'application/json; charset=UTF-8',

@@ -17,7 +17,7 @@ const AddBooks = () => {
     };
 
     axios
-      .post("http://localhost:3002/addBooks", books)
+      .post("https://radiant-badlands-32060.herokuapp.com/addBooks", books)
       .then(function (response) {
         console.log("Server side result", response);
       })

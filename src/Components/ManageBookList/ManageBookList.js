@@ -7,7 +7,7 @@ const ManageBookList = (props) => {
     const {author,name,price,_id} = props.book;
     const handleDeleteClick= (id)=>{
         // console.log(id);
-        fetch(`http://localhost:3002/deleteBook/${id}`,{
+        fetch(`https://radiant-badlands-32060.herokuapp.com/deleteBook/${id}`,{
             method:"DELETE"
         })
         .then(res=>res.json())
