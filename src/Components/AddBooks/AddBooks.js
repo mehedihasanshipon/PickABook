@@ -7,7 +7,6 @@ const AddBooks = () => {
   const { register, handleSubmit } = useForm();
   const [imgUrl, setImgUrl] = useState({});
   const onSubmit = (data) => {
-    // console.log(data)
     const books = {
       name: data.name,
       price: data.price,
@@ -27,7 +26,6 @@ const AddBooks = () => {
   };
 
   const handleImageUpload = (e) => {
-    // console.log(e.target.files[0]);
     const imgData = new FormData();
     imgData.set("key", "baf759f7b47b24e2b89feea41140dc74");
     imgData.append("image", e.target.files[0]);
@@ -36,12 +34,12 @@ const AddBooks = () => {
       .post("https://api.imgbb.com/1/upload", imgData)
       .then(function (response) {
         setImgUrl(response.data.data.display_url);
-        // console.log(response.data.data.display_url);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
+  
   return (
     <div>
       <div className="input-section d-flex justify-content-center">
