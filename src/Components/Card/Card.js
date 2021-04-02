@@ -12,7 +12,7 @@ const Card = (props) => {
     }
 
     return (
-        <div className="col-md-4 g-4">
+        <div className="col-md-6 col-lg-4 g-4">
             <div className="card card-custom">
                 <div className="image-div">
                     <img src={bookImage} className="card-img-top img-fluid" alt=""/>

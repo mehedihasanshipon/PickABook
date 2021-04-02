@@ -6,7 +6,6 @@ import "./AddBooks.css";
 const AddBooks = () => {
   const { register, handleSubmit } = useForm();
   const [imgUrl, setImgUrl] = useState({});
-  console.log({ imgUrl });
   const onSubmit = (data) => {
     // console.log(data)
     const books = {
@@ -32,7 +31,6 @@ const AddBooks = () => {
     const imgData = new FormData();
     imgData.set("key", "baf759f7b47b24e2b89feea41140dc74");
     imgData.append("image", e.target.files[0]);
-    console.log(imgData);
 
     axios
       .post("https://api.imgbb.com/1/upload", imgData)
