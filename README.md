@@ -1,6 +1,6 @@
-# Travel The Town web app.
+# Pick A Book.
 
-## Travel The Town is secured and comport-able ride service for your journey.
+## Pick A Book is a reliable online shop.
 
 ### Title name ###
 * Pick A Book: "Pick A Book" , {A online book shop where you can find your desired books.}
@@ -22,7 +22,7 @@
   * useLocation
   * useRouteMatch
   * useHistory
-### Extra added feature ###
+### What I have done ###
   * Post data to mongodb 
   * Fetch data from mongodb and displayed in UI.
   * Manage data in admin section
